@@ -1,0 +1,16 @@
+html {
+    margin: 3vh 3vw 3vw 3vh;
+    background-color: gray;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    justify-content: center;
+}
+.hehe {
+    margin-top: 50%;
+    background-color: transparent;
+    border: 1vw solid rgb(77, 22, 22);
+}
+.header-login1 {
+    background-color: tomato;
+}
