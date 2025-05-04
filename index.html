@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="a.css"><!-- Di bagian head semua halaman -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB...",
+        authDomain: "your-project.firebaseapp.com",
+        projectId: "your-project",
+        storageBucket: "your-project.appspot.com",
+        messagingSenderId: "123456789",
+        appId: "1:123456789:web:abc..."
+      };
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    
+</head>
+<body>
+    <div class="hehe">
+        <div class="header">
+            <h1>WELCOME TO EP_CONTROL</h1>
+        </div>
+        <div>
+            <button id="login-link" class="header-login1" onclick="loginWithGoogle()">
+                Log In
+            </button>
+            <p id="login-link1" class="header-login2">
+            to using service</p>
+        </div>
+    </div>
+    <script src="a.js"></script>
+</body>
+</html>
