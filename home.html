@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sertakan script Firebase yang sama -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Inisialisasi Firebase yang sama
+        const firebaseConfig = {
+            apiKey: "AIzaSyB8_pj7lvjfbKxY10-JWPEr7kx79j0SNKg",
+            authDomain: "esp-first-bf7a1.firebaseapp.com",
+            projectId: "esp-first-bf7a1",
+            appId: "1:734784429393:web:2a047d08d5b3d93d1fc770",
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+
+        // Cek status login saat halaman dimuat
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // Tampilkan konten home
+                document.getElementById("user-name").textContent = user.displayName;
+                document.getElementById("content").style.display = "block";
+            } else {
+                // Redirect ke index.html jika belum login
+                window.location.href = "index.html";
+            }
+        });
+
+        function logout() {
+            firebase.auth().signOut()
+                .then(() => {
+                    window.location.href = "index.html";
+                });
+        }
+    </script>
+</head>
+<body>
+    <div id="content" style="display:none;">
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <button onclick="logout()">Logout</button>
+        <!-- Konten home lainnya -->
+    </div>
+</body>
+</html>
