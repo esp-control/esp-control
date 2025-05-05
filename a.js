@@ -18,7 +18,7 @@ function loginWithGoogle() {
             console.log("Berhasil login:", user.email);
             
             // Update UI
-            document.getElementById("login-link").style.display = "none";
+            document.getElementById("hehe1").style.display = "none";
             document.getElementById("greeting").style.display = "block";
             document.getElementById("user-name").textContent = user.displayName;
             document.getElementById("login-link1").style.display = "none";
@@ -65,3 +65,15 @@ window.onload = function () {
       google.accounts.id.prompt(); // Memunculkan prompt login Google
   });
 };
+function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            // Redirect ke home.html setelah login berhasil
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            console.error("Error:", error.message);
+            alert("Gagal login: " + error.message);
+        });
+}
